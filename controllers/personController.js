@@ -20,3 +20,18 @@ const createPerson = async (req, res) => {
         })
     }
 }
+
+const getSinglePerson = async (req, res) => {
+    try {
+        const {user_id} = req.params;
+        const person = await Person.findById(user_id);
+
+        if(!person){
+            return res.status(404).json({error: 'Person not found'})
+        }
+        res.json(person);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error: 'An internal error occurred'})
+    }
+}
