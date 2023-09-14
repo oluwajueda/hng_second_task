@@ -64,3 +64,27 @@ const updatePerson = async (req, res) => {
           res.status(500).json({error: 'An internal error occurred'});
     }
 }
+
+const deletePerson = async (req, res) =>{
+    try {
+      const {user_id} = req.params;
+      
+      const person = await Person.findByIdAndRemove(user_id);
+      if(!person){
+        return res.status(404).json({ error: 'Person not found' });
+      }
+      res.status(204).json({
+        response: 'Person deleted'
+      });
+    } catch (error) {
+        console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+    }
+}
+
+module.exports = {
+    createPerson,
+    getSinglePerson,
+    updatePerson,
+    deletePerson
+};
