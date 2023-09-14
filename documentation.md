@@ -1,6 +1,6 @@
 # hng_second_task
 
-# 📁 Collection: Person 
+# 📁 Project: Person Api
 
 
 ## End-point: Read Person
