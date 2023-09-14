@@ -6,7 +6,7 @@
 ## End-point: Read Person
 ### Method: GET
 >```
->http://localhost:5000/api/65028ab3ff80e1ce7273e795
+>https://hng-second-task-tp2q.onrender.com/api/65028ab3ff80e1ce7273e795
 >```
 
 ### Response (**raw**)
@@ -23,7 +23,7 @@
 ## End-point: Read All Persons
 ### Method: GET
 >```
->http://localhost:5000/api
+>https://hng-second-task-tp2q.onrender.com/api
 >```
 
 ### Response (**raw**)
@@ -50,7 +50,7 @@
 ## End-point: Update Person
 ### Method: PUT
 >```
->http://localhost:5000/api/65028ab3ff80e1ce7273e795
+>https://hng-second-task-tp2q.onrender.com/api/65028ab3ff80e1ce7273e795
 >```
 ### Body (**raw**)
 
@@ -75,7 +75,7 @@
 ## End-point: Create Person
 ### Method: POST
 >```
->http://localhost:5000/api
+>https://hng-second-task-tp2q.onrender.com/api
 >```
 ### Body (**raw**)
 
@@ -101,7 +101,7 @@
 ## End-point: Delete Person
 ### Method: DELETE
 >```
->http://localhost:5000/api/65028e91ff80e1ce7273e7a2
+>https://hng-second-task-tp2q.onrender.com/api/65028e91ff80e1ce7273e7a2
 >```
 
 ### Response (**raw**)
