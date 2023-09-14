@@ -41,7 +41,7 @@ const getSinglePerson = async (req, res) => {
 const updatePerson = async (req, res) => {
     try {
         const {user_id} = req.params;
-        const { name } = re.body;
+        const { name } = req.body;
 
         if(!name || typeof name !== 'string') {
             return res.status(400).json({error: 'invalid request, please check your input'});
@@ -65,6 +65,16 @@ const updatePerson = async (req, res) => {
     }
 }
 
+const getAllPersons = async (req, res) => {
+    try {
+        const persons = await Person.find({});
+        res.json(persons);
+    } catch (error) {
+        console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+    }
+}
+
 const deletePerson = async (req, res) =>{
     try {
       const {user_id} = req.params;
@@ -73,9 +83,7 @@ const deletePerson = async (req, res) =>{
       if(!person){
         return res.status(404).json({ error: 'Person not found' });
       }
-      res.status(204).json({
-        response: 'Person deleted'
-      });
+    res.status(200).json({response: 'person deleted'})
     } catch (error) {
         console.error(error);
     res.status(500).json({ error: 'Internal server error' });
@@ -86,5 +94,6 @@ module.exports = {
     createPerson,
     getSinglePerson,
     updatePerson,
-    deletePerson
+    deletePerson,
+    getAllPersons
 };
