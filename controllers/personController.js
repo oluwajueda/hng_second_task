@@ -35,3 +35,32 @@ const getSinglePerson = async (req, res) => {
         res.status(500).json({error: 'An internal error occurred'})
     }
 }
+
+//Update Person
+
+const updatePerson = async (req, res) => {
+    try {
+        const {user_id} = req.params;
+        const { name } = re.body;
+
+        if(!name || typeof name !== 'string') {
+            return res.status(400).json({error: 'invalid request, please check your input'});
+        }
+
+        const person = await Person.findByIdAndUpdate(
+            user_id,
+            { name },
+
+            {new: true}
+        );
+
+        if(!person) {
+            return res.status(404).json({error: 'Person not found'});
+
+        }
+        res.json(person);
+    } catch (error) {
+          console.log(error);
+          res.status(500).json({error: 'An internal error occurred'});
+    }
+}
