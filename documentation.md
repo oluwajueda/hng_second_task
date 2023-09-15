@@ -1,5 +1,8 @@
 # hng_second_task
 
+![Person API UML](./images/new_uml_hng_task.png)
+
+
 # 📁 Project: Person Api
 
 # A. Documentation
