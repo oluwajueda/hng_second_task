@@ -179,7 +179,7 @@ npm install
 
 ### step 3: Create an environment variable
 
-Create a .env file and add the below code and replace <your-mongo-url-connection-string-here> with your mongodb connection string and add your password.
+Create a .env file, add the below code and replace <your-mongo-url-connection-string-here> with your mongodb connection string.
 
 ```
 Mongo_URI=<your-mongo-url-connection-string-here>
